@@ -1,0 +1,13 @@
+<script>
+    let firstName = 'Adam';
+    let secondName = 'Smith';
+    let year = 1990;
+
+    function getAge() {
+        let date = new Date();
+        return date.getFullYear() - year;
+    }
+
+    const FIO = `${firstName} ${secondName}, родился в ${year} году и ему ${getAge(year)} лет `;
+    console.log(FIO);
+</script>
