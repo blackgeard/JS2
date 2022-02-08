@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+        Некая сеть фастфуда предлагает несколько видов гамбургеров:
+        ### Маленький (50 рублей, 20 калорий).
+        ### Большой (100 рублей, 40 калорий). 
+        ### Гамбургер может быть с одним из нескольких видов начинок (обязательно):
+        ### С сыром (+10 рублей, +20 калорий).
+        ### С салатом (+20 рублей, +5 калорий).
+        ### С картофелем (+15 рублей, +10 калорий). 
+        ### Дополнительно гамбургер можно посыпать приправой (+15 рублей, +0 калорий) 
+        и полить майонезом (+20 рублей, +5 калорий). 
+        ### Напишите программу, рассчитывающую стоимость и калорийность гамбургера. 
+        -->
+
+<body>
+    <form action="#">
+        <div class="block size">
+            <input type="radio" id="little" name="size" value="little" data-rus="маленький" data-cost="50"
+                data-calories="20">
+            <label for="little">Маленький</label>
+            <input type="radio" id="big" name="size" value="big" data-rus="большой" data-cost="100" data-calories="40">
+            <label for="big">Большой</label>
+        </div>
+        <div class="block fillings">
+            <input type="radio" id="chease" name="fillings" value="chease" data-rus="с сыром" data-cost="10"
+                data-calories="20">
+            <label for="chease">С сыром</label>
+            <input type="radio" id="green" name="fillings" value="green" data-rus="с салатом" data-cost="20"
+                data-calories="5">
+            <label for="green">С салатом</label>
+            <input type="radio" id="potato" name="fillings" value="potato" data-rus="с картофелем" data-cost="15"
+                data-calories="10">
+            <label for="potato">С картофелем</label>
+        </div>
+        <div class="block additional">
+            <input type="radio" id="noup" name="additional" value="noup" data-rus="без дополнительных ингридиентов"
+                data-cost="0" data-calories="0">
+            <label for="noup">Без дополнительных ингридиентов</label>
+            <input type="radio" id="special" name="additional" value="special" data-rus="с особой приправой"
+                data-cost="15" data-calories="0">
+            <label for="special">С особой приправой</label>
+            <input type="radio" id="mayonnaise" name="additional" value="mayonnaise" data-rus="с майонезом"
+                data-cost="20" data-calories="30">
+            <label for="mayonnaise">С майонезом</label>
+        </div>
+        <button>Посчитать</button>
+        <span>Ваш заказ: </span>
+    </form>
+</body>
+<script>
+    document.querySelector("form").addEventListener("submit", (e) => {
+        // эта Ф сработает при отправке формы, т.е. когда будет нажата кнопка
+        e.preventDefault() // убираем дефолтное поведение формы
+        // создаем пустые переменные для результатов
+        const resultTipes = []
+        const resultCost = []
+        const resultCalories = [];
+        const checked = e.target.querySelectorAll("input:checked") // получаем все выбранные чекбоксы
+        // перебираем коллекцию и пушим в массивы нужные параметры
+        checked.forEach(item => {
+            resultTipes.push(item.dataset.rus);
+            resultCost.push(+(item.dataset.cost)); // +() преобразует в число
+            resultCalories.push(+(item.dataset.calories)); // +() преобразует в число
+        })
+        //https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+        function finallySum(arrayToSum) {
+            return arrayToSum.reduce(function (a, b) {
+                return a + b;
+            })
+        };
+        /* Та же Ф, но стрелочная
+        function finallySum(arrayToSum) {
+            return arrayToSum.reduce((previousValue, currentValue) => previousValue + currentValue);
+        }
+        */
+        let finallyResultCost = finallySum(resultCost)
+        let finallyResultCalories = finallySum(resultCalories)
+        // выводим результат
+        let table = document.querySelector('span');
+        table.innerText = `Ваш заказ: ${resultTipes[0]} бургер ${resultTipes[1]} и ${resultTipes[2]}. Он содержит ${finallyResultCalories} калорий и стоит ${finallyResultCost} рублей.`
+    })
+
+</script>
+
+</html>
