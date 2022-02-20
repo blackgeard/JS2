@@ -1,0 +1,141 @@
+header {
+  width: 800px;
+  height: auto;
+  background: cadetblue;
+}
+
+.invisible {
+  display: none;
+}
+
+main {
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart {
+  width: 45%;
+  height: 200px;
+}
+
+.cart__block {
+  height: auto;
+  width: auto;
+}
+
+.cart__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.cart__item__image {
+  position: fixed;
+  margin-left: 10px;
+}
+
+.cart__item__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 135px;
+}
+
+.cart__item__desc__title {
+  margin-top: 5px;
+}
+
+.cart__item__desc__quantity {
+  top: 70px;
+}
+
+.cart__item__desc__price {
+  margin-top: -75px;
+}
+
+.cart__item__rightBlock {
+  margin-left: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cart__item__rightBlock__deleteButton {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.cart__item__rightBlock__totalPrice {
+  margin-top: 70px;
+  position: absolute;
+}
+
+.products {
+  top: 50px;
+  left: 150px;
+  right: 150px;
+  width: 45%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.products__item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 120px;
+  height: 260px;
+  border: 1px black solid;
+}
+
+.products__item__heading {
+  text-align: center;
+}
+
+.products__item__image {
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  z-index: 4;
+}
+
+.products__item__price {
+  position: absolute;
+  bottom: 160px;
+  margin-left: 15px;
+  text-align: center;
+}
+
+.products__item__buyButton {
+  width: 80px;
+  position: absolute;
+  bottom: 145px;
+  margin-left: 15px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=style.css.map */
