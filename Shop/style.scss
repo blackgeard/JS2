@@ -1,0 +1,101 @@
+header {
+    width: 800px;
+    height: auto;
+    background: cadetblue;
+}
+.invisible {
+    display: none;
+}
+
+main {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart {
+    width: 45%;
+    height: 200px;
+    &__block {
+        height: auto;
+        width: auto;
+    }
+    &__item {
+        display: flex;
+        width: 100%;
+        height: 100px;
+        border: 1px solid black;
+        &__image {
+            position: fixed;
+            margin-left: 10px;
+        }
+        &__desc {
+            display: flex;
+            width: 40%;
+            flex-direction: column;
+            padding-left: 135px;
+            &__title {
+                margin-top: 5px;
+            }
+            &__quantity {
+                top: 70px;
+            }
+            &__price {
+                margin-top: -75px;
+            }
+        }
+        &__rightBlock {
+            margin-left: -10px;
+            display: flex;
+            flex-direction: column;
+            &__deleteButton {
+                position: absolute;
+                margin-top: 10px;
+                margin-left: 50px;
+            }
+            &__totalPrice {
+                margin-top: 70px;
+                position: absolute;
+            }
+        }
+    }
+}
+.products {
+    top: 50px;
+    left: 150px;
+    right: 150px;
+    width: 45%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    &__item {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 120px;
+        height: 260px;
+        border: 1px black solid;
+        &__heading {
+            text-align: center;
+        }
+        &__image {
+            width: 80%;
+            height: auto;
+            margin-left: 10%;
+            margin-right: 10%;
+            z-index: 4;
+        }
+        &__price {
+            position: absolute;
+            bottom: 160px;
+            margin-left: 15px;
+            text-align: center;
+        }
+        &__buyButton {
+            width: 80px;
+            position: absolute;
+            bottom: 145px;
+            margin-left: 15px;
+            align-self: center;
+        }
+    }
+}
